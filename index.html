@@ -1,0 +1,68 @@
+<style>
+span
+{
+display:inline;
+position:relative;
+}
+</style>
+<script>
+function fk(a) 
+{
+	var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() 
+{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+{	
+		document.getElementById("fk").innerHTML = xmlhttp.responseText;	
+}
+}
+xmlhttp.open("GET", "cgi-bin/fk.py?item="+a, true);
+xmlhttp.send();
+return false;
+}
+function sd(a) 
+{
+	var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() 
+{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+{	
+		document.getElementById("sd").innerHTML = xmlhttp.responseText;	
+}
+}
+xmlhttp.open("GET", "cgi-bin/sd.py?item="+a, true);
+xmlhttp.send("item="+a);
+return false;
+}
+function az(a) 
+{
+	var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() 
+{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+{	
+		document.getElementById("az").innerHTML = xmlhttp.responseText;	
+}
+}
+xmlhttp.open("GET", "cgi-bin/az.py?item="+a, true);
+xmlhttp.send("item="+a);
+return false;
+}
+function sendreq()
+{
+var a=document.getElementById("item").value;
+az(a);
+sd(a);
+fk(a);
+return false;
+}
+</script>
+<html>
+<form onsubmit="return sendreq()">
+enter item:<input type=text id="item"><input type="submit" value="check" >
+</form>
+<span id="fk"></span>
+<span id="sd"></span>
+<span id="az"></span>
+
+</html>
