@@ -57,7 +57,7 @@ def scrapea(soup,a,b,c,d): #amazon
         for m in soup.find_all("img",{"class":"s-access-image cfMarker"}):
             pics.append(m.get('src'))
         print"<div style='width=25%;'>"
-        print"<table id='amazon'>"
+        print"<table id='posts'>"
         for t in range(0,len(product)):
             print"<tr><td>amazon</td></tr>"
             print "<tr><td>"+"<img src='"+pics[t]+"'>"+"</td></tr>"
