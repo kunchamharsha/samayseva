@@ -16,7 +16,7 @@ print"<head>"
 print"<style>"
 print"div{display:inline;position:relative;float:left;}"
 print"""
-#sd
+#snapdeal
 {
 display: inline-block;
 margin: 12px 0px 0px 12px;
@@ -59,8 +59,7 @@ def scrapes(soup,a,b,c,d): #snapdeal
         for m in soup.find_all("img",{"class":"product-image"}):
                 if(m!=None):
                         pics.append(m.get('src'))
-        print"<div>"
-        print"<table id='sd' style='width=30%;'>"
+        print"<table id='snapdeal' style='width=30%;'>"
         for t in range(0,len(pics)):        
                 if(pics[t]!=None):
                     print"<tr><td>snapdeal</td></tr>"
@@ -68,7 +67,6 @@ def scrapes(soup,a,b,c,d): #snapdeal
                     print "<tr><td>"+product[t]+"</td></tr>"      
                     print "<tr><td>"+price[t]+"</td></tr>"           
         print"</table>"
-        print"</div>"
 
 
 def snapdeal(soup):
