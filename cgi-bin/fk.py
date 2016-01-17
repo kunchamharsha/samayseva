@@ -27,6 +27,11 @@ border: 1px solid rgb(229, 229, 229);
 width:300px;
 height:100px;
 position:relative;
+}
+#fl
+{
+overflow:scroll;
+height:800px;
 }"""
 print"</style>"
 print"</head>"
@@ -61,6 +66,7 @@ def scrapef(soup,a,b,c,d): #flipkart
                                 price.append(j.get_text('', strip=True))
         for m in soup.find_all("img",{"onerror":"img_onerror(this);"}):
             pics.append(m.get('data-src'))        
+        print"<div id='fl'>"
         print"<table id='flipkart'>"
         for t in range(0,len(price)):
                 print"<tr><td>flipkart</td></tr>"
@@ -68,7 +74,7 @@ def scrapef(soup,a,b,c,d): #flipkart
                 print "<tr><td>"+product[t]+"</td></tr>"
                 print "<tr><td>"+price[t]+"</td></tr>"
         print"</table>"
-
+        print"</div>"
 
 def flipkart(soup):
         scrapef(soup,"a","fk-display-block","span","fk-font-17 fk-bold")        
