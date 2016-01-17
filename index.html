@@ -48,12 +48,27 @@ xmlhttp.open("GET", "cgi-bin/az.py?item="+a, true);
 xmlhttp.send("item="+a);
 return false;
 }
+function eb(a) 
+{
+	var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() 
+{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+{	
+		document.getElementById("eb").innerHTML = xmlhttp.responseText;	
+}
+}
+xmlhttp.open("GET", "cgi-bin/eb.py?item="+a, true);
+xmlhttp.send("item="+a);
+return false;
+}
 function sendreq()
 {
 var a=document.getElementById("item").value;
 az(a);
 sd(a);
 fk(a);
+eb(a);
 return false;
 }
 </script>
@@ -64,5 +79,6 @@ enter item:<input type=text id="item"><input type="submit" value="check" >
 <span id="fk"></span>
 <span id="sd"></span>
 <span id="az"></span>
+<span id="eb"></span>
 
 </html>
