@@ -15,6 +15,19 @@ print "\n\n"
 print"<head>"
 print"<style>"
 print"div{display:inline;position:relative;float:left;}"
+print"""
+#sd
+{
+display: inline-block;
+margin: 12px 0px 0px 12px;
+padding: 0px;
+box-shadow: 8px 8px 5px #888888;
+background:none repeat scroll 0% 0% rgb(241, 241, 241);
+border: 1px solid rgb(229, 229, 229);
+width:300px;
+height:100px;
+position:relative;
+}"""
 print"</style>"
 print"</head>"
 threads=[]
