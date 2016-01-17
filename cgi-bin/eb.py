@@ -28,6 +28,11 @@ width:300px;
 height:100px;
 position:relative;
 }
+#el
+{
+overflow:scroll;
+height:800px;
+}
 """
 print"</style>"
 print"</head>"
@@ -60,6 +65,7 @@ def scrapes(soup,a,b,c,d): #ebay
         for m in soup.find_all("img",{"class":"img"}):
                 if(m!=None):
                         pics.append(m.get('src'))
+        print"<div id='el'>"
         print"<table id='ebay' style='width=30%;'>"
         for t in range(0,len(pics)):        
                 if(pics[t]!=None):
@@ -68,6 +74,7 @@ def scrapes(soup,a,b,c,d): #ebay
                     print "<tr><td>"+product[t]+"</td></tr>"      
                     print "<tr><td>"+price[t]+"</td></tr>"           
         print"</table>"
+        print"</div>"
 
 
 def ebay(soup):
