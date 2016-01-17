@@ -27,7 +27,13 @@ border: 1px solid rgb(229, 229, 229);
 width:300px;
 height:100px;
 position:relative;
-}"""
+}
+#sl
+{
+height:800px;
+overflow:scroll;
+}
+"""
 print"</style>"
 print"</head>"
 threads=[]
@@ -59,6 +65,7 @@ def scrapes(soup,a,b,c,d): #snapdeal
         for m in soup.find_all("img",{"class":"product-image"}):
                 if(m!=None):
                         pics.append(m.get('src'))
+        print"<div id='fl'>"
         print"<table id='snapdeal' style='width=30%;'>"
         for t in range(0,len(pics)):        
                 if(pics[t]!=None):
@@ -67,6 +74,7 @@ def scrapes(soup,a,b,c,d): #snapdeal
                     print "<tr><td>"+product[t]+"</td></tr>"      
                     print "<tr><td>"+price[t]+"</td></tr>"           
         print"</table>"
+        print"</div>"
 
 
 def snapdeal(soup):
