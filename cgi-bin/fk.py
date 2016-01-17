@@ -16,7 +16,7 @@ print"<head>"
 print"<style>"
 print"div{display:inline;position:relative;float:left;}"
 print"""
-#fk
+#flipkart
 {
 display: inline-block;
 margin: 12px 0px 0px 12px;
@@ -61,15 +61,13 @@ def scrapef(soup,a,b,c,d): #flipkart
                                 price.append(j.get_text('', strip=True))
         for m in soup.find_all("img",{"onerror":"img_onerror(this);"}):
             pics.append(m.get('data-src'))        
-        print"<div style='width=30%;'>"
-        print"<table id='fk'>"
+        print"<table id='flipkart'>"
         for t in range(0,len(price)):
                 print"<tr><td>flipkart</td></tr>"
                 print "<tr><td><img src='"+pics[t]+"'></td></tr>"
                 print "<tr><td>"+product[t]+"</td></tr>"
                 print "<tr><td>"+price[t]+"</td></tr>"
         print"</table>"
-        print"</div>"
 
 
 def flipkart(soup):
